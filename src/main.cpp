@@ -23,7 +23,7 @@ void setup()
   client.connect(serverIP, 5000);
 }
 
-String statu = "ON";
+String statu = "ON\r";
 
 void loop()
 {
@@ -32,7 +32,7 @@ void loop()
     Serial.println("已连接到服务器");
     Serial.println(statu);
     client.print(statu);
-    statu == "ON" ? statu = "OFF" : statu = "ON";
+    statu == "ON\r" ? statu = "OFF\r" : statu = "ON\r";//要加/r否则server读取会出问题
   }
   else
   {
