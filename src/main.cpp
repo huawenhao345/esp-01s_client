@@ -27,12 +27,16 @@ String statu = "ON";
 
 void loop()
 {
-  // 这里可以添加代码来定期发送消息到服务器
   if (client.connected())
   {
     Serial.println("已连接到服务器");
-    client.println(statu);
-    statu == "ON"?statu = "OFF":statu = "ON";
+    Serial.println(statu);
+    client.print(statu);
+    statu == "ON" ? statu = "OFF" : statu = "ON";
+  }
+  else
+  {
+    client.connect(serverIP, 5000);
   }
   delay(1000);
 }
