@@ -23,7 +23,7 @@ void setup()
   client.connect(serverIP, 5000);
 }
 
-bool statu = false;
+String statu = "ON";
 
 void loop()
 {
@@ -31,7 +31,8 @@ void loop()
   if (client.connected())
   {
     Serial.println("已连接到服务器");
-    client.println(bool = !bool);
+    client.println(statu);
+    statu == "ON"?statu = "OFF":statu = "ON";
   }
   delay(1000);
 }
