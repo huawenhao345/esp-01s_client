@@ -38,8 +38,6 @@ void setup()
 
   // 连接到服务器
   client.connect(serverIP, 5000);
-
-  pinMode(0,INPUT);
 }
 
 // String statu = "OFF\r";
